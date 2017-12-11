@@ -1,4 +1,4 @@
-import os
+import os,sys
 import subprocess
 from tqdm import tqdm
 
@@ -6,11 +6,19 @@ from tqdm import tqdm
 
 # ! $1: kmerSize | $2: abundance | $3: runNo | $4: seqFileName | $5: SeqType (fa,fq,fastaq)
 
+seqFileName = ""
+seqType = ""
+
+if(len(sys.argv) < 2):
+    sys.exit('Please pass the file name in the data directory and ensure that it has no underscore character!\nEx: python generateGFAs.py read.fa')
+elif(len(sys.argv) >= 2):
+    seqFileName = str(sys.argv[1]).split(".")[0]
+    seqType = str(sys.argv[1]).split(".")[1]
+
+
 kmer_size = str(21)
 min_abundance = str(1)
 run_no = str(1)
-seqFileName = "Homo-ncrna"
-seqType = "fa"
 
 # subprocess.call(" ".join(["./run.sh", kmer_size, min_abundance, run_no, seqFileName, seqType]), shell=True)
 
