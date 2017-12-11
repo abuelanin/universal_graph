@@ -2,13 +2,9 @@
 
 The aim of the project is to identify genes that extracted from weak genomes.
 
-  - Type some Markdown on the left
-  - See HTML in the right
-  - Magic
-
 # Features!
 
-  - Convert fa,fq files to Graphical Fragment Assembly format (GFA 1).
+  - Convert FASTA files to Graphical Fragment Assembly format (GFA 1).
   - Extract the No. of the disconnected graphs with different k-mer values.
 
 ### Used programs:
