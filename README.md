@@ -9,8 +9,6 @@ The aim of the project is to identify genes that extracted from weak genomes.
 
 ### Used programs:
 
-Dillinger is currently extended with the following plugins. Instructions on how to use them in your own application are linked below.
-
 | Program | README |
 | ------ | ------ |
 | Bcalm2 | https://github.com/GATB/bcalm/blob/master/README.md|
