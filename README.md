@@ -46,7 +46,7 @@ Download and install Bcalm
 git clone --recursive https://github.com/GATB/bcalm 
 cd bcalm
 mkdir build;  cd build;  cmake ..;  make -j 8
-cd ..
+cd ../../
 ```
 
 Download and install Bandage
