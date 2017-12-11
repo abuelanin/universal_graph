@@ -21,6 +21,14 @@ The aim of the project is to identify genes that extracted from weak genomes.
 
 ### Installation (Linux) Tested on Ubuntu 
 
+
+##### Clone the Universal Graph repository
+
+```sh
+git clone https://github.com/abuelanin/universal_graph.git
+```
+
+
 ##### Install the dependencies
 -- GCC >= 4.8 or a very recent C++11 capable compiler
 
@@ -60,8 +68,3 @@ cd ..
 
 > Optionally, copy the program into /usr/local/bin:```sudo make install```. The Bandage build directory can then be deleted.
 
-##### Clone the Universal Graph repository
-
-```sh
-git clone https://github.com/abuelanin/universal_graph.git
-```
