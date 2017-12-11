@@ -17,8 +17,8 @@ Dillinger is currently extended with the following plugins. Instructions on how 
 
 | Program | README |
 | ------ | ------ |
-| Bcalm2 | [https://github.com/GATB/bcalm/blob/master/README.md] [PlDb] |
-| Bandage | [https://github.com/rrwick/Bandage/blob/master/README.md] [PlGh] |
+| Bcalm2 | https://github.com/GATB/bcalm/blob/master/README.md|
+| Bandage | https://github.com/rrwick/Bandage/blob/master/README.md |
 
 > We've used Bcalm to generate the unitigs for the sequence then convert the unitigs to GFA.
 > Bandage is used to extract the connected graphs number.
