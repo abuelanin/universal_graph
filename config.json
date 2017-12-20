@@ -13,5 +13,7 @@
     "from": 21,
     "to": 75
   },
-  "generated_plot": "line"
+  "plot_type": "line",
+  "plots_dir":"plots",
+  "html_plot_name":"plot.html"
 }
