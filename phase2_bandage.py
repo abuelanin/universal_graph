@@ -4,12 +4,24 @@ from os import listdir
 from os.path import isfile, join
 from subprocess import check_output
 from tqdm import tqdm
+import sys
+import json
+
+
+with open('config.json', 'r') as f:
+		config = json.load(f)
+
+gfa_dir = config["gfa_files_path"]
+bandage_dir = config["bandage_path"]
+report_dir = config["report_dir_path"]
+csv_dir = config["csv_dir_path"]
+csv_file_name = config["csv_file_name"]
 
 
 # Extract the names of the features from the bandage output
 def constructFeaturesNames(fileName):
-    fileName = "GFAs/" + fileName
-    out = check_output(["Bandage", "info", fileName]).decode("utf-8")
+    fileName = gfa_dir + "/" + fileName
+    out = check_output(["./"+ bandage_dir + "/Bandage", "info", fileName]).decode("utf-8")
     splitted = out.split('\n')
     splitted.pop(19)
     features_names = ["Kmer"]
@@ -17,13 +29,14 @@ def constructFeaturesNames(fileName):
         x = line.split(":")
         # x[0] = x[0].replace(" ", "-")
         features_names.append(x[0])
+    print "Processing the GFA files...\n"
     return features_names
 
 
 # Function to get all the info of a GFA file using Bandage
 def getBandageInfo(fileName, Kmer):
-    fileName = "GFAs/" + fileName
-    out = check_output(["./Bandage/Bandage", "info", fileName]).decode("utf-8")
+    fileName = gfa_dir + "/" + fileName
+    out = check_output(["./"+ bandage_dir + "/Bandage", "info", fileName]).decode("utf-8")
     splitted = out.split('\n')
     splitted.pop(19)
     values = [Kmer]
@@ -34,8 +47,7 @@ def getBandageInfo(fileName, Kmer):
 
 def exportToCSV():
     global features_names, features
-    f = open("result.csv", 'w')
-    #features = sorted(features.items(), key=operator.itemgetter(0))
+    f = open(report + "/" + csv_dir + csv_file_name, 'w')
     try:
         writer = csv.writer(f)
         writer.writerow(features_names)
@@ -45,8 +57,10 @@ def exportToCSV():
         f.close()
 
 
+print "Initializing the process...\n"
+
 # Get all GFA Files Names
-gfa_files = [f for f in listdir("GFAs") if isfile(join("GFAs", f))]
+gfa_files = [f for f in listdir(gfa_dir) if isfile(join(gfa_dir, f))]
 
 # Creating Features Names Array
 features = {}

@@ -6,8 +6,6 @@ from tqdm import tqdm
 
 # ! $1: kmerSize | $2: abundance | $3: runNo | $4: seqFileName | $5: SeqType (fa,fq,fastaq)
 
-seqFileName = ""
-seqType = ""
 
 if(len(sys.argv) < 2):
     sys.exit('Please pass the file name in the data directory and ensure that it has no underscore character!\nEx: python generateGFAs.py read.fa')
@@ -31,6 +29,6 @@ for i in tqdm(range(17, 76, 2)):
     # print "\n" + ("--" * 15) + str("#" + str(runNo)) + "| kmer = " + str(kmer_size) + (" --" * 15) + "\n"
     # Hide results
     FNULL = open(os.devnull, 'w')
-    subprocess.call(" ".join(["./run.sh", kmer_size, min_abundance, run_no, seqFileName, seqType]), shell=True,
+    subprocess.call(" ".join(["./bcalm.sh", kmer_size, min_abundance, run_no, seqFileName, seqType]), shell=True,
                     stdout=FNULL, stderr=subprocess.STDOUT)
     runNo += 1
