@@ -1,0 +1,14 @@
+{
+  "bcalm_path": "bcalm",
+  "bandage_path": "Bandage",
+  "gfa_files_path": "GFAs",
+  "bcalm_kmer_range": {
+    "from": 21,
+    "to": 75
+  },
+  "bandage_kmer_range": {
+    "from": 21,
+    "to": 75
+  },
+  "generated_plot": "line"
+}
