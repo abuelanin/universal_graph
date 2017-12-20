@@ -7,12 +7,13 @@ The aim of the project is to identify genes that extracted from weak genomes.
 
   - Convert FASTA files to Graphical Fragment Assembly format (GFA 1).
   - Extract the No. of the disconnected graphs with different k-mer values.
+  - Results visualization with interactive plots.
 
 ### Used programs:
 
 | Program | README |
 | ------ | ------ |
-| Bcalm2 | https://github.com/GATB/bcalm/blob/master/README.md|
+| Bcalm | https://github.com/GATB/bcalm/blob/master/README.md|
 | Bandage | https://github.com/rrwick/Bandage/blob/master/README.md |
 
 > We've used Bcalm to generate the unitigs for the sequence then convert the unitigs to GFA.
